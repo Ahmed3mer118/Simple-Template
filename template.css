@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+    list-style: none;
+
+}
+:root{
+    --main-color:#2F956D;
+    --second-color:#FEA116;
+    --transition:0.5s;
+}
+
+header{
+    background-image: url(image/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 90%;
+    margin:  15px;
+    flex-wrap: wrap;
+}
+header .container .logo{
+    display: flex;
+    color: white;
+    font-size: 14px;
+}
+header .container .list{
+    display: flex;
+    gap: 20px;
+   
+}
+header .container .list li{
+    position: relative;
+}
+header .container .list li.active{
+    border-bottom: 1px solid white;
+}
+header .container .list li::after{
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 0;
+    background-color: white;
+    height: 2px;
+    width: 0;
+    transition: var(--transition);
+}
+header .container .list li:hover::after{
+    width: 100%;
+}
+header .container .list li a{
+    color: white;
+}
+@media (max-width:767px){
+    .list{
+        margin-top: 20px;
+    }
+}
+/* end header */
+.main{
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+}
+.main h1{
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.main p{
+    color: #626364;
+    margin-bottom: 15px;
+}
+@media (max-width:767px){
+    .main{
+        width: 90%;
+    }
+}
+/*end main */
+/* start content */
+.content{
+    background-color: #eee;
+    padding: 15px;
+    position: relative;
+}
+.content .btn {
+    display: flex;
+    justify-content: center;
+     gap: 10px;
+     flex-wrap: wrap;
+}
+.content .btn span{
+    border: 1px solid #2F956D;
+    color: #2F956D; 
+    padding: 10px;
+    transition: var(--transition);
+    cursor: pointer;
+    margin: 10px 0;
+}
+.content .btn span.active{
+    background-color: #2F956D;
+    color: white;
+}
+.content .btn span:hover{
+    background-color: #2F956D;
+    color: white;
+}
+.content .product{
+    width: 80%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+.content .product .box img{
+    width: 80%;
+}
+.content .product .box h2{
+    font-size: 20px;
+    font-weight: 200;
+    color: #1A66AE;
+    margin-bottom: 10px;
+}
+.content .product .box p{
+    color: #626364;
+    font-weight: 400;
+    margin-bottom: 10px;
+    width: 80%;
+}
+.content .product .box .details{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    margin: 5px;
+}
+.content .product .box .details span{
+    color: #2F956D;
+}
+.content .product .box .details button{
+    border: 1px solid #2F956D;
+    color: #2F956D; 
+    padding: 5px;
+    transition: var(--transition);
+    cursor: pointer;
+    margin: 10px 0;
+}
+.content .product .box .details button:active{
+    transform: scale(0.8);
+}
+.content .product .box .details button:hover{
+    background-color: #2F956D;
+    color: white;
+}
+@media (max-width: 767px){
+    .content .product .box img{
+        width: 100%;
+    }
+    .content .product .box p{
+        width: 100%;
+    }
+   .content .product .box .details{
+        width: 100%;
+    }
+}
+/* end content */
+.chef{
+    margin: 15px ;
+    padding: 15px;
+}
+.chef .container{
+    width: 80%;
+    margin: auto;
+}
+.chef .container .title{
+    text-align: center;
+}
+.chef .container .title span{
+    color: #FEA116;
+    position: relative;
+}
+.chef .container .title span::before{
+    content: "";
+    background-color: #FEA116;
+    height: 3px;
+    width: 50px;
+    position: absolute;
+    top: 8px;
+}
+.chef .container .title span::after{
+    content: "";
+    background-color: #FEA116;
+    height: 3px;
+    width: 50px;
+    position: absolute;
+    top: 8px;
+}
+.chef .container .title span::before{
+    left: -70px;
+}
+.chef .container .title span::after{
+    right: -70px;
+   }
+   .chef .container .title h1{
+    font-size: 35px;
+   }
+   .chef .container .boxes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+   }
+   .chef .container .box{
+    background-color: #eee;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+   }
+   .chef .container .box:hover{
+    background-color: #6263648e;
+    transition: var(--transition);
+    color: white;
+   }
+   .chef .container .box img{
+    border-radius: 50%;
+    width: 310px;
+    margin-bottom: 20px;
+   }
+   @media (max-width:767px){
+    .chef{
+        margin: 0 ;
+        padding: 0;
+    }
+    .chef .container .title{
+        margin: 20px;
+    }
+    .chef .container .box img{
+        width: 250px;
+    }
+}
+/* end chef */
+.book{
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 10px auto;
+
+}
+.book img{
+    width: 60%;
+    height: 80vh;
+}
+.book .details{
+    background-color: #0F172A;
+    height:80vh;
+    width: 100%;
+    padding: 20px;
+}
+.book .details span{
+    color: #FEA116;
+}
+.book .details h1{
+    margin: 0 auto ;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+} 
+
+.book .details .inputs{
+    display: flex;
+    flex-wrap: wrap;
+}
+.book .details .inputs input{
+    width: 47%;
+    margin: 5px;
+    padding: 10px;
+    outline: none;
+}
+.book .details .inputs input:focus{
+    border: 1px solid #1A66AE;
+    box-shadow: 1px 4px 15px #1A66AE;
+}
+.book .details .inputs textarea{
+    width: 95%;
+    height: 80px;
+    margin: 10px ;
+    padding: 10px;
+    outline: none;
+}
+.book .details button{
+    width: 100%;
+    padding: 10px;
+    background-color:#FEA116 ;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    margin:10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.book .details button:active{
+    transform: scale(0.8);
+}
+@media (max-width:991px){
+    .book .details .inputs input {
+        width: 100%;
+    }
+}
+@media (max-width:767px){
+    .book{
+        flex-wrap: wrap;
+        height: 100vh;
+    }
+    .book img{
+        width: 100%;
+    }
+    .book .details .inputs input {
+        width: 100%;
+    }
+}
+/* end book */
